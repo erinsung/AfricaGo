@@ -1,0 +1,59 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended"
+  ],
+  "plugins": [
+    "import", 
+    "simple-import-sort"
+  ],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "simple-import-sort/imports": [
+          2,
+          {
+            "groups": [
+              // Side effect imports.
+              ["^\\u0000"],
+              // React, Redux imports
+              ["^react", "^redux", "^next"],
+              // Packages
+              // Things that start with a letter (or digit or underscore)
+              ["^\\w"],
+              // Packages.
+              // Things that start with a @. usually @material-ui
+              ["^@\\w"],
+              // Absolute imports and other imports such as Vue-style `@/foo`.
+              // Anything that does not start with a dot.
+              // Relative imports.
+              // Anything that starts with a dot.
+              ["^[^.]", "^\\."]
+            ]
+          }
+        ],
+        "prettier/prettier": 2,
+        "react-hooks/rules-of-hooks": 2,
+        "react/self-closing-comp": 2
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  }
+}

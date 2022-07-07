@@ -10,8 +10,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
-
+      template: 'index.html',
     }),
   ],
   module: {
@@ -21,20 +20,20 @@ module.exports = {
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
-        }
+        },
       },
       {
         test: /\.(ts|tsx)$/i,
-        loader: "ts-loader",
-        exclude: ["/node_modules/"],
+        loader: 'ts-loader',
+        exclude: ['/node_modules/'],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset",
+        type: 'asset',
       },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
   },
 };
