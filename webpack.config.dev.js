@@ -9,9 +9,9 @@ module.exports = merge(common, {
     open: true,
     port: 9000,
     hot: true,
-    static: { 
-      directory: path.resolve(__dirname, './dist'), 
+    static: {
+      directory: path.resolve(__dirname, './dist'),
       publicPath: '/dist',
-    }
+    },
   },
 });
